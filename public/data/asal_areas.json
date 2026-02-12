@@ -1,0 +1,213 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Turkana",
+        "classification": "Arid",
+        "area_hectares": 6810000,
+        "area_acres": 16827415
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Marsabit",
+        "classification": "Arid",
+        "area_hectares": 7090000,
+        "area_acres": 17519600
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Wajir",
+        "classification": "Arid",
+        "area_hectares": 5580000,
+        "area_acres": 13787100
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Mandera",
+        "classification": "Arid",
+        "area_hectares": 2650000,
+        "area_acres": 6547500
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Garissa",
+        "classification": "Arid",
+        "area_hectares": 4480000,
+        "area_acres": 11070400
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Isiolo",
+        "classification": "Arid",
+        "area_hectares": 2550000,
+        "area_acres": 6300000
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Samburu",
+        "classification": "Arid",
+        "area_hectares": 2100000,
+        "area_acres": 5189000
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Tana River",
+        "classification": "Arid",
+        "area_hectares": 3560000,
+        "area_acres": 8796800
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Baringo",
+        "classification": "Arid",
+        "area_hectares": 1160000,
+        "area_acres": 2866400
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Laikipia",
+        "classification": "Semi-Arid",
+        "area_hectares": 948000,
+        "area_acres": 2342560
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Kajiado",
+        "classification": "Semi-Arid",
+        "area_hectares": 2110000,
+        "area_acres": 5213700
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Narok",
+        "classification": "Semi-Arid",
+        "area_hectares": 1790000,
+        "area_acres": 4422300
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "West Pokot",
+        "classification": "Semi-Arid",
+        "area_hectares": 906000,
+        "area_acres": 2238820
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Kitui",
+        "classification": "Semi-Arid",
+        "area_hectares": 3050000,
+        "area_acres": 7533500
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Makueni",
+        "classification": "Semi-Arid",
+        "area_hectares": 804000,
+        "area_acres": 1986880
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Taita Taveta",
+        "classification": "Semi-Arid",
+        "area_hectares": 1710000,
+        "area_acres": 4225700
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Kwale",
+        "classification": "Semi-Arid",
+        "area_hectares": 829000,
+        "area_acres": 2047660
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Kilifi",
+        "classification": "Semi-Arid",
+        "area_hectares": 1260000,
+        "area_acres": 3113400
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Embu",
+        "classification": "Semi-Arid",
+        "area_hectares": 270000,
+        "area_acres": 667170
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Lamu",
+        "classification": "Semi-Arid",
+        "area_hectares": 631000,
+        "area_acres": 1558607
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Meru",
+        "classification": "Semi-Arid",
+        "area_hectares": 695000,
+        "area_acres": 1717165
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Nyeri",
+        "classification": "Semi-Arid",
+        "area_hectares": 360000,
+        "area_acres": 889560,
+        "note": "Specifically Kieni sub-county"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "county": "Tharaka Nithi",
+        "classification": "Semi-Arid",
+        "area_hectares": 267000,
+        "area_acres": 659742
+      }
+    }
+  ]
+}

@@ -1,65 +1,92 @@
-import Image from "next/image";
+'use client';
+
+import dynamic from 'next/dynamic';
+
+// Import maps as client components dynamically to avoid SSR issues with Leaflet
+const MauForestMap = dynamic(() => import('./components/MauForestMap'), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center">Loading map...</div>
+});
+
+const ASALMap = dynamic(() => import('./components/ASALMap'), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center">Loading map...</div>
+});
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Header */}
+      <header className="bg-green-700 text-white py-6 shadow-lg">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-2">Kenya Forest & ASAL Visualization</h1>
+          <p className="text-green-100">Interactive maps showing Mau Forest Complex and Arid/Semi-Arid Lands</p>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8">
+        {/* Introduction */}
+        <section className="mb-12 bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-3">Project Overview</h2>
+          <p className="text-gray-700 leading-relaxed mb-3">
+            This visualization provides critical information about Kenya&apos;s natural resources and climate zones:
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li><strong>Mau Forest Complex:</strong> The largest indigenous montane forest in East Africa, spanning multiple counties</li>
+            <li><strong>ASAL Areas:</strong> Arid and Semi-Arid Lands covering a significant portion of Kenya&apos;s territory</li>
+          </ul>
+        </section>
+
+        {/* Mau Forest Section */}
+        <section className="mb-12">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <MauForestMap />
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t-2 border-gray-200 my-12"></div>
+
+        {/* ASAL Section */}
+        <section className="mb-12">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <ASALMap />
+          </div>
+        </section>
+
+        {/* Key Insights */}
+        <section className="mb-12 bg-blue-50 rounded-lg shadow-md p-6 border border-blue-200">
+          <h2 className="text-2xl font-bold text-blue-800 mb-4">Key Insights</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Mau Forest Complex</h3>
+              <ul className="text-gray-700 space-y-1 text-sm">
+                <li>• Critical water catchment area</li>
+                <li>• Supports over 400,000 hectares of biodiversity</li>
+                <li>• Spans Nakuru, Kericho, Narok, and Bomet counties</li>
+                <li>• Feeds major rivers including the Mara, Sondu, and Ewaso Ngiro</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">ASAL Areas</h3>
+              <ul className="text-gray-700 space-y-1 text-sm">
+                <li>• 23 counties classified as ASAL (9 Arid + 14 Semi-Arid)</li>
+                <li>• Cover approximately 80-89% of Kenya&apos;s land mass</li>
+                <li>• Home to 36-38% of Kenya&apos;s population</li>
+                <li>• Support 70% of national livestock</li>
+                <li>• Face unique challenges: water scarcity, drought, food insecurity</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="text-center text-gray-600 text-sm mt-12 pb-6">
+          <p>Data visualization for environmental and climate analysis in Kenya</p>
+
+        </footer>
+      </div>
+    </main>
   );
 }
