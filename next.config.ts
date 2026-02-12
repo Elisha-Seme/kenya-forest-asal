@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/kenya-forest-asal' : '',
+  basePath: process.env.GITHUB_ACTIONS ? '/kenya-forest-asal' : '',
   images: {
     unoptimized: true,
   },
