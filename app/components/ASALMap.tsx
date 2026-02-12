@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { Flame, Sun, Maximize2 } from 'lucide-react';
 
 interface ASALFeature {
   type: string;
@@ -236,13 +237,15 @@ export default function ASALMap() {
             {/* Arid Areas Stats */}
             <div className="p-4 bg-red-50 rounded-lg border border-red-200">
               <h3 className="font-semibold text-lg text-red-800 mb-2 flex items-center">
-                <span className="w-4 h-4 bg-red-600 rounded mr-2"></span>
+                <Flame className="w-5 h-5 text-red-600 mr-2" />
                 Arid Areas
               </h3>
               <p className="text-sm text-gray-600 mb-2">{totalStats.arid.count} Counties</p>
               <div className="space-y-2">
                 <div>
-                  <p className="text-sm text-gray-600">Total Area (Hectares)</p>
+                  <p className="text-sm text-gray-600 flex items-center gap-1">
+                    <Maximize2 className="w-3 h-3" /> Total Area (Hectares)
+                  </p>
                   <p className="text-2xl font-bold text-red-700">{totalStats.arid.hectares.toLocaleString()}</p>
                 </div>
                 <div>
@@ -259,13 +262,15 @@ export default function ASALMap() {
             {/* Semi-Arid Areas Stats */}
             <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
               <h3 className="font-semibold text-lg text-orange-800 mb-2 flex items-center">
-                <span className="w-4 h-4 bg-orange-500 rounded mr-2"></span>
+                <Sun className="w-5 h-5 text-orange-500 mr-2" />
                 Semi-Arid Areas
               </h3>
               <p className="text-sm text-gray-600 mb-2">{totalStats.semiArid.count} Counties</p>
               <div className="space-y-2">
                 <div>
-                  <p className="text-sm text-gray-600">Total Area (Hectares)</p>
+                  <p className="text-sm text-gray-600 flex items-center gap-1">
+                    <Maximize2 className="w-3 h-3" /> Total Area (Hectares)
+                  </p>
                   <p className="text-2xl font-bold text-orange-700">{totalStats.semiArid.hectares.toLocaleString()}</p>
                 </div>
                 <div>

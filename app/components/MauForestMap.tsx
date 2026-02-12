@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { Ruler, TreePine, MapPin } from 'lucide-react';
 
 interface MauForestData {
   type: string;
@@ -115,15 +116,24 @@ export default function MauForestMap() {
   return (
     <div className="w-full">
       <div className="mb-4">
-        <h2 className="text-2xl font-bold text-gray-800">Mau Forest Complex</h2>
-        <p className="text-gray-600 mt-1">Location: {mauData?.properties.county}</p>
+        <h2 className="text-2xl font-bold text-gray-800 flex items-center">
+          <TreePine className="w-8 h-8 text-green-700 mr-2" />
+          Mau Forest Complex
+        </h2>
+        <p className="text-gray-600 mt-1 flex items-center">
+          <MapPin className="w-4 h-4 mr-1" />
+          Location: {mauData?.properties.county}
+        </p>
       </div>
 
       <div ref={mapContainerRef} className="w-full h-96 rounded-lg shadow-lg border border-gray-300" />
 
       {mauData && (
         <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-          <h3 className="font-semibold text-lg text-green-800 mb-2">Area Measurements</h3>
+          <h3 className="font-semibold text-lg text-green-800 mb-2 flex items-center">
+            <Ruler className="w-5 h-5 mr-2" />
+            Area Measurements
+          </h3>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-sm text-gray-600">Hectares</p>
